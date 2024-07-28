@@ -1,0 +1,18 @@
+project:
+  type: website
+
+website:
+  title: 生产制造 | Production Industry
+  navbar:
+    tools:
+      - href: /
+        icon: house-door
+      - href: http://pengxianzhe.org
+        icon: house-door-fill
+format:
+  html:
+    theme: flatly
+    css: styles.css
+
+
+
