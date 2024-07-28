@@ -9,10 +9,13 @@ website:
         icon: house-door
       - href: http://pengxianzhe.org
         icon: house-door-fill
+    search: true
 format:
   html:
     theme: flatly
     css: styles.css
+    fontsize: 1.2em
+    linestretch: 1.5
 
 
 
