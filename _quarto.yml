@@ -3,6 +3,7 @@ project:
 
 website:
   title: 生产制造 | Production Industry
+  favicon: /image/logo.svg
   navbar:
     tools:
       - href: /
