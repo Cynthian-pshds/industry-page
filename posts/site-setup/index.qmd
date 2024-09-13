@@ -1,6 +1,6 @@
 ---
 title: 我的建站方案 | My Site Setup
-subtitle: Astro + Docusaurus + Algolia + Quarto + GitHub + Netlify + Cloudflare + Namesilo
+subtitle: Algolia + Astro + Cloudflare + Docusaurus + GitHub + Namesilo + Netlify + Quarto
 author: Peng Xianzhe
 date: "2024-07-28"
 categories: 操作经验
