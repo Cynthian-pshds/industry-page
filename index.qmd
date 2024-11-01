@@ -4,13 +4,13 @@ listing:
   sort: "date desc"
   type: default
   categories: true
-  sort-ui: false
-  filter-ui: false
+  sort-ui: true
+  filter-ui: true
 page-layout: full
 title-block-banner: true
 ---
 <br>
-&#8195;&#8195;本网站只有博客，没有文档。
+&#8195;&#8195;本网站只有帖子，没有文档。
 <br>
 <br>
 ---

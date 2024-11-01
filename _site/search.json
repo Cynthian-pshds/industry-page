@@ -1,16 +1,9 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this blog"
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "生产制造 | Production Industry",
     "section": "",
-    "text": "本网站只有博客，没有文档。  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n我的建站方案 | My Site Setup\n\n\nAlgolia + Astro + Cloudflare + Docusaurus + GitHub + Namesilo + Netlify + Quarto\n\n\n\n操作经验\n\n\n\n\n\n\n\n\n\nJul 28, 2024\n\n\nPeng Xianzhe\n\n\n\n\n\n\nNo matching items"
+    "text": "本网站只有帖子，没有文档。  \n\n\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\n我的建站方案 | My Site Setup\n\n\nAlgolia + Astro + Cloudflare + Docusaurus + GitHub + Namesilo + Quarto\n\n\n\n操作经验\n\n\n\n\n\n\n\n\n\nJul 28, 2024\n\n\nPeng, Xianzhe\n\n\n\n\n\n\nNo matching items"
   }
 ]
