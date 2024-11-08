@@ -13,7 +13,7 @@ format:
   html:
     theme: flatly
     css: styles.css
-    fontsize: 1.2em
+    fontsize: 18px
     linestretch: 1.6
     date-format: "YYYY 年 M 月 DD 日"
     toc: true

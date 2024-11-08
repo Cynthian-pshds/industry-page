@@ -1,7 +1,8 @@
 ---
-title: 对文科生友好的 Jupyter + Stata 配置方法
-subtitle: VS Code 和 JupyterLab Desktop 两种方案
-description: 对 Windows 10 用户适用，信息截至 2024 年
+title: Jupyter + Stata 配置方法
+subtitle: VS Code 或 JupyterLab Desktop｜对 Windows 10 用户适用，时效截至 2024 年
+description: 对文科生友好
+abstract: 暂无
 author: 刘景山
 date: "2024-4-28"
 categories: [操作经验,Jupyter,Stata]
