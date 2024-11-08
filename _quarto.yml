@@ -14,7 +14,14 @@ format:
     theme: flatly
     css: styles.css
     fontsize: 1.2em
-    linestretch: 1.5
+    linestretch: 1.6
+    date-format: "YYYY 年 M 月 DD 日"
+    toc: true
+    toc-depth: 3
+    lang: zh-cn
+
+language:
+  section-title-abstract: "摘要"
 
 
 

@@ -13,5 +13,11 @@
   },
   "posts/site-setup/index.qmd": {
     "index.html": "e34832ca"
+  },
+  "posts/jupyter-stata/index.md": {
+    "index.html": "2b0a5ec9"
+  },
+  "posts/jupyter-stata/index.qmd": {
+    "index.html": "b2ae8ba1"
   }
 }

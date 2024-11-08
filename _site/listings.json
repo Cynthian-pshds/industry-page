@@ -2,7 +2,8 @@
   {
     "listing": "/index.html",
     "items": [
-      "/posts/site-setup/index.html"
+      "/posts/site-setup/index.html",
+      "/posts/jupyter-stata/index.html"
     ]
   }
 ]
