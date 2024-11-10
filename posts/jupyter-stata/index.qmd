@@ -2,7 +2,7 @@
 title: Jupyter + Stata 配置方法
 subtitle: VS Code 或 JupyterLab Desktop
 description: 对文科生友好
-abstract: 对 64 位版 Windows 10 用户适用，时效截至 2024 年｜手机浏览不显示目录，建议用更大的屏幕看
+abstract: 对 64 位版 Windows 10 适用，时效截至 2024 年｜手机浏览不显示目录，建议用更大的屏幕看
 author: 刘景山
 date: 2024-4-28
 categories: [操作经验, Jupyter,Stata]
@@ -19,7 +19,7 @@ language:
 Win 指的是键盘上的 Windows 徽标键，左下角 Ctrl 和 Alt 之间，四个方片。
 
 ::: {.callout-note title="本经验不包含安装 Stata"}
-请检查确认你已经成功安装 Stata
+请检查确认你已经成功安装 Stata。
 :::
 
 ::: {.callout-tip title="跳跃提示"}
@@ -29,7 +29,7 @@ Win 指的是键盘上的 Windows 徽标键，左下角 Ctrl 和 Alt 之间，�
 :::
 
 ::: {.callout-important title="请检查自身操作系统"}
-再次强调，本经验对 **64 位版 Windows 10** 用户适用。\
+再次强调，本经验对 **64 位版 Windows 10** 适用。\
 Windows 其他版本的用户可**遵照**操作，遇见问题再另外解决。\
 其他操作系统的用户可**参照**操作，并参考 @sec-appendix 列出的网址。
 :::
@@ -59,14 +59,13 @@ Miniconda 也是 Anaconda 的产品，虽然现在不对任何人收费，但以
 
 Miniforge Prompt 本身并不需要设定环境变量。现在可以跳到 @sec-virtualenv
 
-:::{.callout-caution title="非必需操作（点击展开）" collapse="true"}
-如果你希望使用 cmd 或者 Powershell 之类，那么按以下操作：
-
+:::{.callout-tip title="非必需操作（点击展开）" collapse="true"}
+如果你希望使用 cmd 或者 Powershell 之类，那么按以下操作：\
 1.  打开 Windows 高级系统设置
 2.  点击「高级」选项卡
 3.  点开「环境变量」
 4.  单击「系统变量」当中的「Path」$\Rightarrow$ 单击「编辑」进入「编辑环境变量」窗口
-5.  单击「新建」来创建路径，通常安装 miniforge 的文件夹默认在 C 盘，是 `C:\\miniforge3`，那么你要新建的的三个路径就是
+5.  单击「新建」来创建路径，通常安装 miniforge 的文件夹默认在 C 盘，是 `C:\\miniforge3`，那么你要新建的三个路径就是
 ``` txt
 C:\miniforge3  
 C:\miniforge3\Scripts  
@@ -77,7 +76,7 @@ C:\miniforge3\Library\bin
 #### 配虚拟环境 {#sec-virtualenv}
 
 ::: {.callout-tip title="用自己原有的环境也可以"}
-并不一定必须要按照下面操作创建一个新环境单独给 stata 用。\
+并不一定必须要按照下面操作创建新环境单独给 stata 用。\
 用你自己已经熟悉习惯了的虚拟环境也可以，只要不是 `base` 环境就行。
 :::
 
@@ -105,7 +104,7 @@ mamba activate jupyter_stata
 conda activate jupyter_stata
 ```
 
-如果要退出环境，由于此时是第一次激活环境，以下两句命令有可能出现某一种失效，如果无效则可以考虑两种都试试。第二次激活及以后就不再会失效。
+如果要退出环境，由于此时是第一次激活环境，以下两句命令有可能出现某一种失效，如果无效则可以考虑两种都试试。第二次激活及以后就不会再失效。
 
 ``` bash
 mamba deactivate
@@ -117,7 +116,7 @@ mamba deactivate jupyter_stata
 
 ### 安装 Jupyter 软件包 {#sec-jupyter}
 
-激活刚才你创建的环境，接下来的所有环节，除 cmd 操作外，都在这个环境中完成。
+激活刚才你创建的环境，接下来的所有环节，除 Powershell 外，都在这个环境中完成。
 
 #### 安装 Jupyter
 
@@ -132,7 +131,6 @@ mamba install jupyterlab
 ``` bash
 jupyter lab
 ```
-
 如果此时在浏览器打开了 Lab 应用，说明安装成功且运行正常。
 
 ### 配 Jupyter 内核 {#sec-kernel}
@@ -140,23 +138,19 @@ jupyter lab
 #### 安装内核
 
 下载安装 nbstata 软件包
-
 ``` bash
 pip install nbstata
 ```
 
 用 nbstata 软件包向 jupyer 中安装 nbstata 内核
-
 ``` bash
 python -m nbstata.install
 ```
 
 如果以后要更新，直接 upgrade
-
 ``` bash
 pip install nbstata --upgrade
 ```
-
 而且**不**需要再重新 `python -m nbstata.install`
 
 #### 设置内核
@@ -217,8 +211,8 @@ JupyterLab Desktop 因为基于 Electron 开发，需要靠 Node.js 实现某些
 好在 [Corey Butler](https://github.com/coreybutler){target="_blank"} 开发了 [NVM for Windows](https://github.com/coreybutler/nvm-windows){target="_blank"} 作为使用上的代替。
 
 :::{.callout-note title="卸载干净" collapse="false"}
-我假定你没有在自己电脑上安装过 Node.js 或 npm\
-如果有，卸载后可以在 cmd 用 `where node` 帮助删除残余文件夹\
+我假定你没有在自己电脑上安装过 Node.js 或 npm。\
+如果有，卸载后可以在 cmd 或 Powershell 用 `where node` 帮助删除残余文件夹，\
 同时要删除有关的环境变量。
 :::
 
@@ -236,16 +230,13 @@ Node.js Symlink 的文件夹路径要设为尚**不**存在的文件夹。
 ##### 在 NVM 中装配 Node.js
 
 查看可安装的 Node JS 版本
-
 ```bash
 nvm list available
 ```
-
 此时会返回与以下类似的输出。
 
 :::{.callout-caution title="点击展开" collapse="true"}
----
-``` txt
+```
 |   CURRENT    |     LTS      |  OLD STABLE  | OLD UNSTABLE |
 |--------------|--------------|--------------|--------------|
 |    23.1.0    |   22.11.0    |   0.12.18    |   0.11.16    |
@@ -292,7 +283,7 @@ nvm use 22.11.0
 \
 
 :::{.callout-important title="如果 nvm use 出现乱码或有其他故障"}
-请检查「以管理员身份运行」这一步，它非常重要
+请检查「以管理员身份运行」这一步，它非常重要。
 :::
 
 NVM 已经帮你配好了环境变量，所以不需要再手动操作其他内容，这样装好了就行
@@ -308,18 +299,13 @@ NVM 已经帮你配好了环境变量，所以不需要再手动操作其他内�
 
 ##### 切换成中文显示 {#sec-labchinese}
 
-网页内容可以切换成中文，但 JupyterLab Desktop 这个 App 本身的不可以。
-
-退出 App；
-
-打开 Miniforge Prompt，激活刚才你使用的环境；
-
+网页内容可以切换成中文，但 JupyterLab Desktop 这个 App 本身的不可以。\
+退出 App；\
+打开 Miniforge Prompt，激活刚才你使用的环境；\
 用以下命令安装中文语言包
-
 ```bash
 pip install jupyterlab-language-pack-zh-CN
 ```
-
 再打开 App，在网页的 Settings－Language 选中 `Chinese (Simplified, China) - 中文 (简体, 中国)`
 
 ## VS Code 方案 {#sec-vscode}
@@ -357,15 +343,13 @@ pip install jupyterlab-language-pack-zh-CN
 点击右上角「选择内核」，选「Jupyter Kernel...」，选「Stata(nbstata)」
 
 在单元格内输入
-
 ```stata
 sysuse auto
 su
 ```
-
-得到如下输出
-
-``` stata
+得到如下输出\
+:::{.callout-caution title="点击展开" collapse="true"}
+```
 . sysuse auto
 (1978 automobile data)
 
@@ -390,7 +374,7 @@ displacement |         74    197.2973    91.83722         79        425
 
 . 
 ```
-
+:::
 可以用啦。
 
 ## 附录 {#sec-appendix}

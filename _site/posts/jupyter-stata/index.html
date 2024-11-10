@@ -197,7 +197,7 @@ window.Quarto = {
   <div>
     <div class="abstract">
       <div class="block-title">摘要</div>
-      对 64 位版 Windows 10 用户适用，时效截至 2024 年｜手机浏览不显示目录，建议用更大的屏幕看
+      对 64 位版 Windows 10 适用，时效截至 2024 年｜手机浏览不显示目录，建议用更大的屏幕看
     </div>
   </div>
   
@@ -284,7 +284,7 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>请检查确认你已经成功安装 Stata</p>
+<p>请检查确认你已经成功安装 Stata。</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="跳跃提示">
@@ -312,7 +312,7 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>再次强调，本经验对 <strong>64 位版 Windows 10</strong> 用户适用。<br>
+<p>再次强调，本经验对 <strong>64 位版 Windows 10</strong> 适用。<br>
 Windows 其他版本的用户可<strong>遵照</strong>操作，遇见问题再另外解决。<br>
 其他操作系统的用户可<strong>参照</strong>操作，并参考 <a href="#sec-appendix" class="quarto-xref">小节&nbsp;5</a> 列出的网址。</p>
 </div>
@@ -351,7 +351,7 @@ Miniconda 也是 Anaconda 的产品，虽然现在不对任何人收费，但以
 <h4 data-number="2.1.2" class="anchored" data-anchor-id="环境变量"><span class="header-section-number">2.1.2</span> 环境变量</h4>
 <p>也许你刚才在安装 exe 时出于安全考虑而没有勾选自动添加环境变量。</p>
 <p>Miniforge Prompt 本身并不需要设定环境变量。现在可以跳到 <a href="#sec-virtualenv" class="quarto-xref">小节&nbsp;2.1.3</a></p>
-<div class="callout callout-style-default callout-caution callout-titled" title="非必需操作（点击展开）">
+<div class="callout callout-style-default callout-tip callout-titled" title="非必需操作（点击展开）">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -363,14 +363,8 @@ Miniconda 也是 Anaconda 的产品，虽然现在不对任何人收费，但以
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>如果你希望使用 cmd 或者 Powershell 之类，那么按以下操作：</p>
-<ol type="1">
-<li>打开 Windows 高级系统设置</li>
-<li>点击「高级」选项卡</li>
-<li>点开「环境变量」</li>
-<li>单击「系统变量」当中的「Path」<span class="math inline">\(\Rightarrow\)</span> 单击「编辑」进入「编辑环境变量」窗口</li>
-<li>单击「新建」来创建路径，通常安装 miniforge 的文件夹默认在 C 盘，是 <code>C:\\miniforge3</code>，那么你要新建的的三个路径就是</li>
-</ol>
+<p>如果你希望使用 cmd 或者 Powershell 之类，那么按以下操作：<br>
+1. 打开 Windows 高级系统设置 2. 点击「高级」选项卡 3. 点开「环境变量」 4. 单击「系统变量」当中的「Path」<span class="math inline">\(\Rightarrow\)</span> 单击「编辑」进入「编辑环境变量」窗口 5. 单击「新建」来创建路径，通常安装 miniforge 的文件夹默认在 C 盘，是 <code>C:\\miniforge3</code>，那么你要新建的三个路径就是</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode txt code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>C:\miniforge3  </span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>C:\miniforge3\Scripts  </span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>C:\miniforge3\Library\bin</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -390,7 +384,7 @@ Miniconda 也是 Anaconda 的产品，虽然现在不对任何人收费，但以
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>并不一定必须要按照下面操作创建一个新环境单独给 stata 用。<br>
+<p>并不一定必须要按照下面操作创建新环境单独给 stata 用。<br>
 用你自己已经熟悉习惯了的虚拟环境也可以，只要不是 <code>base</code> 环境就行。</p>
 </div>
 </div>
@@ -402,14 +396,14 @@ Miniconda 也是 Anaconda 的产品，虽然现在不对任何人收费，但以
 <div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mamba</span> activate jupyter_stata</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>如果无效，可考虑用 conda 代替操作（conda 和 mamba 互换通常是可行的，但是使用 conda 默认通道下载某个软件包代表为此后使用行为承担商业法律责任，除非指定使用 conda-forge 通道）</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate jupyter_stata</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>如果要退出环境，由于此时是第一次激活环境，以下两句命令有可能出现某一种失效，如果无效则可以考虑两种都试试。第二次激活及以后就不再会失效。</p>
+<p>如果要退出环境，由于此时是第一次激活环境，以下两句命令有可能出现某一种失效，如果无效则可以考虑两种都试试。第二次激活及以后就不会再失效。</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mamba</span> deactivate</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mamba</span> deactivate jupyter_stata</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
 <section id="sec-jupyter" class="level3" data-number="2.2">
 <h3 data-number="2.2" class="anchored" data-anchor-id="sec-jupyter"><span class="header-section-number">2.2</span> 安装 Jupyter 软件包</h3>
-<p>激活刚才你创建的环境，接下来的所有环节，除 cmd 操作外，都在这个环境中完成。</p>
+<p>激活刚才你创建的环境，接下来的所有环节，除 Powershell 外，都在这个环境中完成。</p>
 <section id="安装-jupyter" class="level4" data-number="2.2.1">
 <h4 data-number="2.2.1" class="anchored" data-anchor-id="安装-jupyter"><span class="header-section-number">2.2.1</span> 安装 Jupyter</h4>
 <p>JupyterLab 是 Jupyter Notebook 的新一代升级版，Jupyter Notebook 未来计划将放弃更新维护。所以你可以不再安装 Notebook，直接安装 Lab</p>
@@ -545,8 +539,8 @@ Miniconda 也是 Anaconda 的产品，虽然现在不对任何人收费，但以
 </div>
 <div id="callout-7" class="callout-7-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
-<p>我假定你没有在自己电脑上安装过 Node.js 或 npm<br>
-如果有，卸载后可以在 cmd 用 <code>where node</code> 帮助删除残余文件夹<br>
+<p>我假定你没有在自己电脑上安装过 Node.js 或 npm。<br>
+如果有，卸载后可以在 cmd 或 Powershell 用 <code>where node</code> 帮助删除残余文件夹，<br>
 同时要删除有关的环境变量。</p>
 </div>
 </div>
@@ -586,31 +580,30 @@ Miniconda 也是 Anaconda 的产品，虽然现在不对任何人收费，但以
 </div>
 <div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<hr>
-<div class="sourceCode" id="cb15"><pre class="sourceCode txt code-with-copy"><code class="sourceCode default"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>|   CURRENT    |     LTS      |  OLD STABLE  | OLD UNSTABLE |</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>|--------------|--------------|--------------|--------------|</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>|    23.1.0    |   22.11.0    |   0.12.18    |   0.11.16    |</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>|    23.0.0    |   20.18.0    |   0.12.17    |   0.11.15    |</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>|   22.10.0    |   20.17.0    |   0.12.16    |   0.11.14    |</span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>|    22.9.0    |   20.16.0    |   0.12.15    |   0.11.13    |</span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>|    22.8.0    |   20.15.1    |   0.12.14    |   0.11.12    |</span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>|    22.7.0    |   20.15.0    |   0.12.13    |   0.11.11    |</span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>|    22.6.0    |   20.14.0    |   0.12.12    |   0.11.10    |</span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>|    22.5.1    |   20.13.1    |   0.12.11    |    0.11.9    |</span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>|    22.5.0    |   20.13.0    |   0.12.10    |    0.11.8    |</span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>|    22.4.1    |   20.12.2    |    0.12.9    |    0.11.7    |</span>
-<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>|    22.4.0    |   20.12.1    |    0.12.8    |    0.11.6    |</span>
-<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>|    22.3.0    |   20.12.0    |    0.12.7    |    0.11.5    |</span>
-<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>|    22.2.0    |   20.11.1    |    0.12.6    |    0.11.4    |</span>
-<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>|    22.1.0    |   20.11.0    |    0.12.5    |    0.11.3    |</span>
-<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>|    22.0.0    |   20.10.0    |    0.12.4    |    0.11.2    |</span>
-<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>|    21.7.3    |    20.9.0    |    0.12.3    |    0.11.1    |</span>
-<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>|    21.7.2    |   18.20.4    |    0.12.2    |    0.11.0    |</span>
-<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>|    21.7.1    |   18.20.3    |    0.12.1    |    0.9.12    |</span>
-<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>|    21.7.0    |   18.20.2    |    0.12.0    |    0.9.11    |</span>
-<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a>|    21.6.2    |   18.20.1    |   0.10.48    |    0.9.10    |</span>
-<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a>This is a partial list. For a complete list, visit https://nodejs.org/en/download/releases</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>|   CURRENT    |     LTS      |  OLD STABLE  | OLD UNSTABLE |
+|--------------|--------------|--------------|--------------|
+|    23.1.0    |   22.11.0    |   0.12.18    |   0.11.16    |
+|    23.0.0    |   20.18.0    |   0.12.17    |   0.11.15    |
+|   22.10.0    |   20.17.0    |   0.12.16    |   0.11.14    |
+|    22.9.0    |   20.16.0    |   0.12.15    |   0.11.13    |
+|    22.8.0    |   20.15.1    |   0.12.14    |   0.11.12    |
+|    22.7.0    |   20.15.0    |   0.12.13    |   0.11.11    |
+|    22.6.0    |   20.14.0    |   0.12.12    |   0.11.10    |
+|    22.5.1    |   20.13.1    |   0.12.11    |    0.11.9    |
+|    22.5.0    |   20.13.0    |   0.12.10    |    0.11.8    |
+|    22.4.1    |   20.12.2    |    0.12.9    |    0.11.7    |
+|    22.4.0    |   20.12.1    |    0.12.8    |    0.11.6    |
+|    22.3.0    |   20.12.0    |    0.12.7    |    0.11.5    |
+|    22.2.0    |   20.11.1    |    0.12.6    |    0.11.4    |
+|    22.1.0    |   20.11.0    |    0.12.5    |    0.11.3    |
+|    22.0.0    |   20.10.0    |    0.12.4    |    0.11.2    |
+|    21.7.3    |    20.9.0    |    0.12.3    |    0.11.1    |
+|    21.7.2    |   18.20.4    |    0.12.2    |    0.11.0    |
+|    21.7.1    |   18.20.3    |    0.12.1    |    0.9.12    |
+|    21.7.0    |   18.20.2    |    0.12.0    |    0.9.11    |
+|    21.6.2    |   18.20.1    |   0.10.48    |    0.9.10    |
+
+This is a partial list. For a complete list, visit https://nodejs.org/en/download/releases</code></pre>
 </div>
 </div>
 </div>
@@ -634,7 +627,7 @@ Miniconda 也是 Anaconda 的产品，虽然现在不对任何人收费，但以
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>请检查「以管理员身份运行」这一步，它非常重要</p>
+<p>请检查「以管理员身份运行」这一步，它非常重要。</p>
 </div>
 </div>
 <p>NVM 已经帮你配好了环境变量，所以不需要再手动操作其他内容，这样装好了就行</p>
@@ -650,10 +643,10 @@ Miniconda 也是 Anaconda 的产品，虽然现在不对任何人收费，但以
 标题栏 Menu 的 Settings 当中也可以换环境。</p>
 <section id="sec-labchinese" class="level5" data-number="3.2.3.1">
 <h5 data-number="3.2.3.1" class="anchored" data-anchor-id="sec-labchinese"><span class="header-section-number">3.2.3.1</span> 切换成中文显示</h5>
-<p>网页内容可以切换成中文，但 JupyterLab Desktop 这个 App 本身的不可以。</p>
-<p>退出 App；</p>
-<p>打开 Miniforge Prompt，激活刚才你使用的环境；</p>
-<p>用以下命令安装中文语言包</p>
+<p>网页内容可以切换成中文，但 JupyterLab Desktop 这个 App 本身的不可以。<br>
+退出 App；<br>
+打开 Miniforge Prompt，激活刚才你使用的环境；<br>
+用以下命令安装中文语言包</p>
 <div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install jupyterlab-language-pack-zh-CN</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>再打开 App，在网页的 Settings－Language 选中 <code>Chinese (Simplified, China) - 中文 (简体, 中国)</code></p>
 </section>
@@ -694,31 +687,32 @@ Miniconda 也是 Anaconda 的产品，虽然现在不对任何人收费，但以
 <p>在单元格内输入</p>
 <div class="sourceCode" id="cb20"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">sysuse</span> auto</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>su</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>得到如下输出</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>. <span class="kw">sysuse</span> auto</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>(1978 automobile <span class="kw">data</span>)</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>. su</span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>    Variable |        Obs        Mean    Std. <span class="kw">dev</span>.       Min        Max</span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>-------------+---------------------------------------------------------</span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>        make |          0</span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>       price |         74    6165.257    2949.496       3291      15906</span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>         mpg |         74     21.2973    5.785503         12         41</span>
-<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>       rep78 |         69    3.405797    .9899323          1          5</span>
-<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>    headroom |         74    2.993243    .8459948        1.5          5</span>
-<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>-------------+---------------------------------------------------------</span>
-<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>       trunk |         74    13.75676    4.277404          5         23</span>
-<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>      <span class="kw">weight</span> |         74    3019.459    777.1936       1760       4840</span>
-<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>      <span class="fu">length</span> |         74    187.9324    22.26634        142        233</span>
-<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>        turn |         74    39.64865    4.399354         31         51</span>
-<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>displacement |         74    197.2973    91.83722         79        425</span>
-<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>-------------+---------------------------------------------------------</span>
-<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>  gear_ratio |         74    3.014865    .4562871       2.19       3.89</span>
-<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a>     foreign |         74    .2972973    .4601885          0          1</span>
-<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a>. </span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>可以</p>
+<p>得到如下输出<br>
+:::{.callout-caution title=“点击展开” collapse=“true”}</p>
+<pre><code>. sysuse auto
+(1978 automobile data)
+
+. su
+
+    Variable |        Obs        Mean    Std. dev.       Min        Max
+-------------+---------------------------------------------------------
+        make |          0
+       price |         74    6165.257    2949.496       3291      15906
+         mpg |         74     21.2973    5.785503         12         41
+       rep78 |         69    3.405797    .9899323          1          5
+    headroom |         74    2.993243    .8459948        1.5          5
+-------------+---------------------------------------------------------
+       trunk |         74    13.75676    4.277404          5         23
+      weight |         74    3019.459    777.1936       1760       4840
+      length |         74    187.9324    22.26634        142        233
+        turn |         74    39.64865    4.399354         31         51
+displacement |         74    197.2973    91.83722         79        425
+-------------+---------------------------------------------------------
+  gear_ratio |         74    3.014865    .4562871       2.19       3.89
+     foreign |         74    .2972973    .4601885          0          1
+
+. </code></pre>
+<p>::: 可以用啦。</p>
 </section>
 </section>
 </section>
