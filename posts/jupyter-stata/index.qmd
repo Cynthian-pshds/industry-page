@@ -9,9 +9,6 @@ categories: [操作经验, Jupyter,Stata]
 number-sections: true
 toc-title: 章节目录
 toc-depth: 5
-language:
-    zh:
-      Abstract: 摘要
 ---
 
 ## 前言
@@ -55,18 +52,19 @@ Miniconda 也是 Anaconda 的产品，虽然现在不对任何人收费，但以
 
 #### 环境变量
 
-也许你刚才在安装 exe 时出于安全考虑而没有勾选自动添加环境变量。
-
+也许你刚才在安装 exe 时出于安全考虑而没有勾选自动添加环境变量。\
 Miniforge Prompt 本身并不需要设定环境变量。现在可以跳到 @sec-virtualenv
 
 :::{.callout-tip title="非必需操作（点击展开）" collapse="true"}
-如果你希望使用 cmd 或者 Powershell 之类，那么按以下操作：\
+如果你希望使用 cmd 或者 Powershell 之类，那么按以下操作：
+
 1.  打开 Windows 高级系统设置
 2.  点击「高级」选项卡
 3.  点开「环境变量」
 4.  单击「系统变量」当中的「Path」$\Rightarrow$ 单击「编辑」进入「编辑环境变量」窗口
 5.  单击「新建」来创建路径，通常安装 miniforge 的文件夹默认在 C 盘，是 `C:\\miniforge3`，那么你要新建的三个路径就是
-``` txt
+6.  
+``` 
 C:\miniforge3  
 C:\miniforge3\Scripts  
 C:\miniforge3\Library\bin
@@ -86,19 +84,19 @@ C:\miniforge3\Library\bin
 mamba create -n xxx python=yyy
 ```
 
-例如，假设我要创建一个名为`jupyter_stata`的环境，python 版本号为`3.11.9`
+例如，假设我要创建一个名为`jupyter_stata`的环境，python 版本号为`3.11.9`：
 
 ``` bash
 mamba create -n jupyter_stata python=3.11.9
 ```
 
-接着激活这个环境
+接着激活这个环境：
 
 ``` bash
 mamba activate jupyter_stata
 ```
 
-如果无效，可考虑用 conda 代替操作（conda 和 mamba 互换通常是可行的，但是使用 conda 默认通道下载某个软件包代表为此后使用行为承担商业法律责任，除非指定使用 conda-forge 通道）
+如果无效，可考虑用 conda 代替操作：（conda 和 mamba 互换通常是可行的，但是使用 conda 默认通道下载某个软件包代表为此后使用行为承担商业法律责任，除非指定使用 conda-forge 通道）
 
 ``` bash
 conda activate jupyter_stata
@@ -120,7 +118,7 @@ mamba deactivate jupyter_stata
 
 #### 安装 Jupyter
 
-JupyterLab 是 Jupyter Notebook 的新一代升级版，Jupyter Notebook 未来计划将放弃更新维护。所以你可以不再安装 Notebook，直接安装 Lab
+JupyterLab 是 Jupyter Notebook 的新一代升级版，Jupyter Notebook 未来计划将放弃更新维护。所以你可以不再安装 Notebook，直接安装 Lab：
 
 ``` bash
 mamba install jupyterlab
@@ -137,17 +135,17 @@ jupyter lab
 
 #### 安装内核
 
-下载安装 nbstata 软件包
+下载安装 nbstata 软件包：
 ``` bash
 pip install nbstata
 ```
 
-用 nbstata 软件包向 jupyer 中安装 nbstata 内核
+用 nbstata 软件包向 jupyer 中安装 nbstata 内核：
 ``` bash
 python -m nbstata.install
 ```
 
-如果以后要更新，直接 upgrade
+如果以后要更新，直接 upgrade：
 ``` bash
 pip install nbstata --upgrade
 ```
@@ -171,7 +169,7 @@ pip install nbstata --upgrade
 `echo`|想必你知道<br>用 Jupyter 跑 Python 没有回声<br>那 Jupyter 里的 Stata 怎么办|三选一&emsp;$\Downarrow$<br>`True`&emsp;一切命令都有回声<br>`False`&emsp;cell 仅一行命令时不回声；其他 cell 有回声<br>`None`&emsp;完全没有回声|想必你已经知道 Stata 有个对用户很友好的默认设定，就是会在输出窗口先显示你给的输入，再显示给你的输出<br>这个功能被叫作「回声」
 `missing`|缺失值用什么表示|字符串本身即可<br>如果要和 Pandas 保持一致，就填 `pandas`|原则上不建议修改，默认的`.` 就是 Stata 唯一接受的形式
 
-以我自己的为例，最终效果大概会像这样
+以我自己的为例，最终效果大概会像这样：
 
 ```
 [nbstata]
@@ -202,8 +200,8 @@ missing = .
 
 #### 配 Node.js 环境 {#sec-nodejs}
 
-JupyterLab Desktop 因为基于 Electron 开发，需要靠 Node.js 实现某些后台功能。\
-直接安装 Node.js 难以切换版本（文科社科普遍就业困难，谁知道你以后会不会改行改到被迫用某个低版本 Node.js 在甲方提供的祖传代码上开发），所以建议如下用 NVM 作管理器安装 Node.js
+JupyterLab Desktop 因为基于 Electron 开发，需要靠 Node JS 实现某些后台功能。\
+直接安装难以切换版本（文科社科普遍就业困难，谁知道你以后会不会改行改到被迫用某个低版本 Node.js 在甲方提供的祖传代码上开发），所以建议如下用 NVM 作管理器安装 Node JS。
 
 ##### 安装 NVM
 
@@ -223,13 +221,12 @@ Node.js Symlink 的文件夹路径要设为尚**不**存在的文件夹。
 :::
 
 装完以后按 Win + R，输入 `powershell` 按 Ctrl + Shift + Enter，弹出**以管理员身份运行**的 Window Powershell 窗口。\
-输入 `nvm -v`，如果返回了当前 nvm 的版本号，就说明安装成功了。
-
-**不要关闭这个窗口。**
+输入 `nvm -v`，如果返回了当前 nvm 的版本号，就说明安装成功了。\
+[**不要关闭这个窗口。**]{.underline}
 
 ##### 在 NVM 中装配 Node.js
 
-查看可安装的 Node JS 版本
+查看可安装的 Node JS 版本：
 ```bash
 nvm list available
 ```
@@ -266,17 +263,17 @@ This is a partial list. For a complete list, visit https://nodejs.org/en/downloa
 
 其中 LTS 代表 Long-term Support，表示这些版本是可以长期稳定运行的。显然你应该从这一列选。我暂时见过的用到 Node.js 的应用对版本的要求要么是 `>=18.0.0`，要么就是`<=18.0.0, >=20.0.0`，所以选择 20 以上的比较靠谱。
 
-假如你选择了 `22.11.0`
+假如你选择了 `22.11.0`：
 
 ```bash
 nvm install 22.11.0
 ```
 \
-在不同版本之间切换
+在不同版本之间切换：
 ```bash
 nvm use 20.12.2
 ```
-换回来
+换回来：
 ```bash
 nvm use 22.11.0
 ```
@@ -286,11 +283,11 @@ nvm use 22.11.0
 请检查「以管理员身份运行」这一步，它非常重要。
 :::
 
-NVM 已经帮你配好了环境变量，所以不需要再手动操作其他内容，这样装好了就行
+NVM 已经帮你配好了环境变量，所以不需要再手动操作其他内容，这样装好了就行。
 
 #### 安装 JupyterLab Desktop
 
-在 [GitHub Releases](https://github.com/jupyterlab/jupyterlab-desktop/releases){target="_blank"} 下载最新版的 exe 格式文件点开安装
+在 [GitHub Releases](https://github.com/jupyterlab/jupyterlab-desktop/releases){target="_blank"} 下载最新版的 exe 格式文件点开安装。
 
 #### 设置 JupyterLab Desktop
 
@@ -318,36 +315,32 @@ pip install jupyterlab-language-pack-zh-CN
 
 #### 切换成中文
 
-启动后，按 Ctrl + Shift + X，在左侧上方弹出的扩展搜索框中搜索「中文」，在搜索结果中找到「Chinese (Simplified) (简体中文) Language Pack for Visual Studio Code」安装。
-
+启动后，按 Ctrl + Shift + X，在左侧上方弹出的扩展搜索框中搜索「中文」，在搜索结果中找到「Chinese (Simplified) (简体中文) Language Pack for Visual Studio Code」安装。\
 接下来你可以自由探索 VS Code 的功能了。
 
 ### 连接 VS Code 和外界
 
 #### 装 Stata 插件
 
-仍然在扩展搜索框，搜索「stata」\
-安装「Stata Enhanced」「stataRun」
-
+仍然在扩展搜索框，搜索「stata」，\
+安装「Stata Enhanced」「stataRun」。\
 前者的作用是改善开发体验，后者的作用是和 Stata 软件在后台连接。
 
 #### 装 Jupyter 插件
 
-仍然在扩展搜索框，搜索「jupyter」\
+仍然在扩展搜索框，搜索「jupyter」，\
 安装「Jupyter」(作者是 Microsoft)，这会给你把一整套 Jupyter 套装全部安好。
 
 #### 试验
 
-按 Ctrl + Alt + Win + N，点击「Jupyter Notebook」新建 ipynb 格式文件。
-
-点击右上角「选择内核」，选「Jupyter Kernel...」，选「Stata(nbstata)」
-
+按 Ctrl + Alt + Win + N，点击「Jupyter Notebook」新建 ipynb 格式文件。\
+点击右上角「选择内核」，选「Jupyter Kernel...」，选「Stata (nbstata)」，\
 在单元格内输入
 ```stata
 sysuse auto
 su
 ```
-得到如下输出
+得到如下输出。
 
 :::{.callout-caution title="点击展开" collapse="true"}
 ```
