@@ -1,113 +1,331 @@
 ---
 title: Jupyter + Stata 配置方法
-subtitle: VS Code 或 JupyterLab Desktop｜对 Windows 10 用户适用，时效截至 2024 年
+subtitle: VS Code 或 JupyterLab Desktop
 description: 对文科生友好
-abstract: 暂无
+abstract: 对 64 位版 Windows 10 用户适用，时效截至 2024 年｜手机浏览不显示目录，建议用更大的屏幕看
 author: 刘景山
-date: "2024-4-28"
-categories: [操作经验,Jupyter,Stata]
+date: 2024-4-28
+categories: [操作经验, Jupyter,Stata]
 number-sections: true
-toc-title: "章节目录"
-toc-depth: 4
+toc-title: 章节目录
+toc-depth: 5
+language:
+    zh:
+      Abstract: 摘要
 ---
 
 ## 前言
 
+::: {.callout-note title="本经验不包含安装 Stata"}
+请检查确认你已经成功安装 Stata
+:::
+
 ::: {.callout-tip title="跳跃提示"}
-如果你已经安装了主流 Python 环境管理器（例如 Anaconda / Miniconda / Mambaforge / Miniforge / Micromamba），请跳过 @sec-python ，直接从 @sec-jupyter 开始。  
-如果你已经安装了 Jupyter 软件包，请跳过 @sec-jupyter ，直接从 @sec-kernel 开始。  
+如果你已经安装了主流 Python 环境管理器（例如 Anaconda / Miniconda / Mambaforge / Miniforge / Micromamba），请跳过 @sec-python ，直接从 @sec-jupyter 开始。\
+如果你已经安装了 Jupyter 软件包，请跳过 @sec-jupyter ，直接从 @sec-kernel 开始。\
 以下章节可能多次涉及到类似这样的「跳过」，不再说明，请视自身情况灵活跳跃。
 :::
 
 ::: {.callout-important title="请检查自身操作系统"}
-再次强调，本经验对 **Windows 10** 用户适用。Windows 其他版本的用户可**遵照**操作，遇见问题再另外解决。其他操作系统的用户可**参照**操作，并参考 @sec-appendix 列出的网址。
+再次强调，本经验对 **64 位版 Windows 10** 用户适用。\
+Windows 其他版本的用户可**遵照**操作，遇见问题再另外解决。\
+其他操作系统的用户可**参照**操作，并参考 @sec-appendix 列出的网址。
 :::
 
-&emsp;
+ 
 
-## 配 Jupyter 环境
+## 配 Jupyter 环境 {#sec-jupyter_env}
 
 ### 配 Python 环境 {#sec-python}
 
-Anaconda 是商业软件，虽然还没有对个人收费，但已经宣布对企业收费。  
-Miniconda 也是 Anaconda 的产品，虽然现在不对任何人收费，但以后的事没人知道。  
+Anaconda 是商业软件，虽然还没有对个人收费，但已经宣布对企业收费。\
+Miniconda 也是 Anaconda 的产品，虽然现在不对任何人收费，但以后的事没人知道。\
 虽然 Anaconda 对新手友好，但为了规避将来的法律风险——同时也为了你可怜的 C 盘剩余空间考虑——我还是强烈建议你选择 Miniforge。
 
 #### EXE 下载安装
 
-以下两个地址都可以下载到最新正式版 exe 格式文件，下载后点开安装就可以。[原文](https://github.com/conda-forge/miniforge/#windows){target="_blank"}  
-[conda-forge 官网下载地址](https://conda-forge.org/miniforge/){target="_blank"}  
+以下两个地址都可以下载到最新正式版 exe 格式文件，下载后点开安装就可以。[原文](https://github.com/conda-forge/miniforge/#windows){target="_blank"}\
+[conda-forge 官网下载地址](https://conda-forge.org/miniforge/){target="_blank"}\
 [GitHub 仓库下载地址](https://github.com/conda-forge/miniforge/releases){target="_blank"}
 
 ::: {.callout-warning collapse="false" title="全英文路径和 Windows Username 有关"}
-如果你的 Windows 用户名含有英文 26 个拉丁字母以外的字符，这会导致安装路径不是纯英文的，从而安装失败。这在可预见的将来都没有解决方法，你只能换个 Windows 用户名了。  
-详见 [此 Issue](https://github.com/conda-forge/miniforge/issues/484)
+如果你的 Windows 用户名含有英文 26 个拉丁字母以外的字符，这会导致安装路径不是纯英文的，从而安装失败。这在可预见的将来都没有解决方法，你只能换个 Windows 用户名了。
+详见 [此 Issue](https://github.com/conda-forge/miniforge/issues/484){target="_blank"}
 :::
 
 #### 环境变量
 
-也许你刚才在安装 exe 时出于安全考虑而没有勾选自动添加环境变量。Miniforge Prompt 本身并不需要设定环境变量；如果你希望使用 cmd 或者 Powershell 之类，那么按以下操作：
+也许你刚才在安装 exe 时出于安全考虑而没有勾选自动添加环境变量。
 
-1. 打开 Windows 高级系统设置
-2. 点击「高级」选项卡
-3. 点开「环境变量」
-4. 单击「系统变量」当中的「Path」$\Rightarrow$ 单击「编辑」进入「编辑环境变量」窗口
-5. 单击「新建」来创建路径，通常安装 miniforge 的文件夹默认在 C 盘，是「C:\\miniforge3」，那么你要新建的的三个路径就是
-```
+Miniforge Prompt 本身并不需要设定环境变量。现在可以跳到 @sec-virtualenv
+
+:::{.callout-caution title="非必需操作（点击展开）" collapse="true"}
+如果你希望使用 cmd 或者 Powershell 之类，那么按以下操作：
+
+1.  打开 Windows 高级系统设置
+2.  点击「高级」选项卡
+3.  点开「环境变量」
+4.  单击「系统变量」当中的「Path」$\Rightarrow$ 单击「编辑」进入「编辑环境变量」窗口
+5.  单击「新建」来创建路径，通常安装 miniforge 的文件夹默认在 C 盘，是 `C:\\miniforge3`，那么你要新建的的三个路径就是
+``` txt
 C:\miniforge3  
 C:\miniforge3\Scripts  
 C:\miniforge3\Library\bin
 ```
+:::
 
-#### 配虚拟环境
+#### 配虚拟环境 {#sec-virtualenv}
 
-打开 Miniforge Prompt，输入以下代码按 Enter，就创建了你需要的环境。xxx 是你给它起的名字，yyy 是它的版本号。-n 是 -name 的缩写，代表用后面跟着的单词命名。
+::: {.callout-tip title="用自己原有的环境也可以"}
+并不一定必须要按照下面操作创建一个新环境单独给 stata 用。\
+用你自己已经熟悉习惯了的虚拟环境也可以，只要不是 `base` 环境就行。
+:::
 
-```powershell
+打开 Miniforge Prompt，输入以下代码按 Enter，就创建了你需要的环境。`xxx` 是你给它起的名字，`yyy` 是给它安排的 python 版本号。`-n` 是 `-name` 的缩写，代表用后面跟着的单词命名。
+
+``` bash
 mamba create -n xxx python=yyy
 ```
 
-例如，假设我要创建一个名为 jupyter_stata 的环境，python 版本号为 3.11.9
+例如，假设我要创建一个名为`jupyter_stata`的环境，python 版本号为`3.11.9`
 
-```powershell
+``` bash
 mamba create -n jupyter_stata python=3.11.9
 ```
 
 接着激活这个环境
 
-```powershell
+``` bash
 mamba activate jupyter_stata
 ```
 
-如果无效，可考虑用 conda 操作
+如果无效，可考虑用 conda 代替操作（conda 和 mamba 互换通常是可行的，但是使用 conda 默认通道下载某个软件包代表为此后使用行为承担商业法律责任，除非指定使用 conda-forge 通道）
 
-```powershell
+``` bash
 conda activate jupyter_stata
 ```
 
 如果要退出环境，由于此时是第一次激活环境，以下两句命令有可能出现某一种失效，如果无效则可以考虑两种都试试。第二次激活及以后就不再会失效。
 
-```powershell
+``` bash
 mamba deactivate
 ```
 
-```powershell
+``` bash
 mamba deactivate jupyter_stata
 ```
 
 ### 安装 Jupyter 软件包 {#sec-jupyter}
 
-激活环境后，安装 jupyter
+激活刚才你创建的环境，接下来的所有环节，除 cmd 操作外，都在这个环境中完成。
 
-## 配 Jupyter 内核 {#sec-kernel}
+#### 安装 Jupyter
+
+JupyterLab 是 Jupyter Notebook 的新一代升级版，Jupyter Notebook 未来计划将放弃更新维护。所以你可以不再安装 Notebook，直接安装 Lab
+
+``` bash
+mamba install jupyterlab
+```
+
+#### 检查 {#sec-openlab}
+
+``` bash
+jupyter lab
+```
+
+如果此时在浏览器打开了 Lab 应用，说明安装成功且运行正常。
+
+### 配 Jupyter 内核 {#sec-kernel}
+
+#### 安装内核
+
+下载安装 nbstata 软件包
+
+``` bash
+pip install nbstata
+```
+
+用 nbstata 软件包向 jupyer 中安装 nbstata 内核
+
+``` bash
+python -m nbstata.install
+```
+
+如果以后要更新，直接 upgrade
+
+``` bash
+pip install nbstata --upgrade
+```
+
+而且**不**需要再重新 `python -m nbstata.install`
+
+#### 设置内核
+
+接下来，你需要手动修改一张配置文件。\
+在你 C 盘的用户名文件夹底下找到 `.config\nbstata\nbstata.conf` 文件。\
+假设你的 Windows 用户名叫做 `xiaoming`，那么这个路径就是 `C:\Users\xiaoming\.config\nbstata\`找到后打开，\
+（随便用什么软件打开，简朴到 Windows 自带的记事本可以，花哨到 Neovim 也可以）\
+根据你自己的情况修改这些值：（这张表**别用手机看**）
+
+变量名|解释|怎么填|备注
+:-:|---------|----------|----------
+`stata_dir`|你的 Stata<br>安装的文件夹在哪|从Windows资源管理器地址栏复制就可以
+`edition`|Stata 有三套版本<br>你装的是哪一版| `be` `se` `mp`&emsp;三选一|
+`splash`|要不要在 Jupyter 的输出当中也显示启动报告|`True` 或 `False`|Stata 在启动时通常在输出窗口报告软件当前版本、功能状态、购买凭证等
+`graph_format`|Stata 输出图表时<br>存为什么格式|四选一&emsp;$\Downarrow$<br>`png`&thinsp;`pdf`&thinsp;`svg`&thinsp;`pystata` <br>`pystata` 的意思是和 pystata 的设置保持一致|虽然你现在可能不知道什么是 pystata<br>（我也不知道）<br>但以后可能用得上
+`graph_width`<br><br>`graph_height`|生成图表的横向尺寸<br><br>生成图表的纵向尺寸|如果不写单位，就默认是 `in`（inches 英寸）<br>单位还可以写<br>`cm`（厘米）<br>`px`（逻辑像素）|只要你填了有（填的有）数字，Stata 代码的 `xsize` 和 `ysize` 数值就被覆盖，不起作用<br>如果不想覆盖它们，就填 `default`
+`echo`|想必你知道<br>用 Jupyter 跑 Python 没有回声<br>那 Jupyter 里的 Stata 怎么办|三选一&emsp;$\Downarrow$<br>`True`&emsp;一切命令都有回声<br>`False`&emsp;cell 仅一行命令时不回声；其他 cell 有回声<br>`None`&emsp;完全没有回声|想必你已经知道 Stata 有个对用户很友好的默认设定，就是会在输出窗口先显示你给的输入，再显示给你的输出<br>这个功能被叫作「回声」
+`missing`|缺失值用什么表示|字符串本身即可<br>如果要和 Pandas 保持一致，就填 `pandas`|原则上不建议修改，默认的`.` 就是 Stata 唯一接受的形式
+
+以我自己的为例，最终效果大概会像这样
+
+``` txt
+[nbstata]
+stata_dir = D:/Program Files/Stata18
+edition = mp
+splash = False
+graph_format = png
+graph_width = 5.5in
+graph_height = 4in
+echo = False
+missing = .
+```
+——莫忘了 Ctrl + S 保存。
 
 ## JupyterLab 方案 {#sec-jupyterlab}
 
-虽然在 VS Code 丰富的社区扩展生态和灵活的语法高亮前，原生 Jupyter 已经没有多少吸引力（而且 Jupyter 受财力限制，目前没有，未来也不太可能学微软砸钱给 GitHub Copilot 教育优惠的免费 LLM 辅助），但考虑到读者朋友多来自社科专业，大概率是 Jupyter 原住民，而且 VS Code 由于可自定义的设置太多，常常难以复现，还是介绍一下原生 Jupyter 的配置。
+虽然在 VS Code 丰富的社区扩展生态和灵活的语法高亮前，原生 Jupyter 已经没有多少吸引力（而且 Jupyter 受财力限制，目前没有，未来也不太可能学微软砸钱给 GitHub Copilot 教育优惠的免费 LLM 辅助），但考虑到读者朋友多来自社科专业，大概率是 Jupyter 原住民，而且 VS Code 由于可自定义的设置太多，常常难以复现，所以还是介绍一下原生 Jupyter 的配置。
 
-虽然 JupyterLab Desktop 因为基于 Electron 开发而受到广大程序员朋友嘲笑，但我仍然推荐。它安装扩展、浏览已装扩展、检查扩展运行是否正常都是直接在应用内部点鼠标就可以的，不需要键盘敲命令行。它不在浏览器里显示，可以轻松区分 Ctrl + Tab 和 Alt + Tab 的作用，与浏览器实现分类正确的两种切换。
+虽然 JupyterLab Desktop 因为基于 Electron 开发而受到广大程序员朋友嘲笑，但我仍然推荐。它安装、卸载、浏览、检修扩展都是直接在应用内部点鼠标就可以的，不需要键盘敲命令行。它不在浏览器里显示，可以轻松区分 Ctrl + Tab 和 Alt + Tab 的作用，与浏览器实现分类正确的两种切换。
 
-## VS Code 方案
+如果你赞赏以上叙述，决定不嘲笑我，请从 @sec-labdesktop 继续。
+
+### JupyterLab Web
+
+你刚才已经在 @sec-openlab 打开了，启动页面会有「nbstata」的内核按钮，与 python 内核一起出现，并列显示。这就可以直接用——从最简洁的实现方法来说，本经验到这里已经**可以结束了**。如果还需要将英文界面切换成中文，可参考 @sec-labchinese 的方法。
+
+### JupyterLab Desktop {#sec-labdesktop}
+
+#### 配 Node.js 环境 {#sec-nodejs}
+
+JupyterLab Desktop 因为基于 Electron 开发，需要靠 Node.js 实现某些后台功能。\
+直接安装 Node.js 难以切换版本（文科社科普遍就业困难，谁知道你以后会不会改行改到被迫用某个低版本 Node.js 在甲方提供的祖传代码上开发），所以建议如下用 NVM 作管理器安装 Node.js
+
+##### 安装 NVM
+
+[nvm](https://github.com/nvm-sh/nvm){target="_blank"} 本身是个 Unix 应用，只能在 Linux 等类 Unix 操作系统（例如 Android&ensp;iOS&ensp;macOS）运行，Windows 享受不到。\
+好在 [Corey Butler](https://github.com/coreybutler){target="_blank"} 开发了 [NVM for Windows](https://github.com/coreybutler/nvm-windows){target="_blank"} 作为使用上的代替。
+
+:::{.callout-note title="卸载干净" collapse="false"}
+我假定你没有在自己电脑上安装过 Node.js 或 npm\
+如果有，卸载后可以在 cmd 用 `where node` 帮助删除残余文件夹\
+同时要删除有关的环境变量。
+:::
+
+在 [这个地址](https://github.com/coreybutler/nvm-windows/releases){target="_blank"} 找到「Latest」版本底下的「Assets」，下载 exe 文件。
+
+:::{.callout-important title="安装过程中，设路径时"}
+Node.js Symlink 的文件夹路径要设为尚**不**存在的文件夹。
+:::
+
+装完以后按 Win + R，输入 `powershell` 按 Ctrl + Shift + Enter，弹出**以管理员身份运行**的 Window Powershell 窗口。\
+输入 `nvm -v`，如果返回了当前 nvm 的版本号，就说明安装成功了。
+
+**不要关闭这个窗口。**
+
+##### 在 NVM 中装配 Node.js
+
+查看可安装的 Node JS 版本
+
+```bash
+nvm list available
+```
+
+此时会返回与以下类似的输出。
+
+:::{.callout-caution title="点击展开" collapse="true"}
+---
+``` txt
+|   CURRENT    |     LTS      |  OLD STABLE  | OLD UNSTABLE |
+|--------------|--------------|--------------|--------------|
+|    23.1.0    |   22.11.0    |   0.12.18    |   0.11.16    |
+|    23.0.0    |   20.18.0    |   0.12.17    |   0.11.15    |
+|   22.10.0    |   20.17.0    |   0.12.16    |   0.11.14    |
+|    22.9.0    |   20.16.0    |   0.12.15    |   0.11.13    |
+|    22.8.0    |   20.15.1    |   0.12.14    |   0.11.12    |
+|    22.7.0    |   20.15.0    |   0.12.13    |   0.11.11    |
+|    22.6.0    |   20.14.0    |   0.12.12    |   0.11.10    |
+|    22.5.1    |   20.13.1    |   0.12.11    |    0.11.9    |
+|    22.5.0    |   20.13.0    |   0.12.10    |    0.11.8    |
+|    22.4.1    |   20.12.2    |    0.12.9    |    0.11.7    |
+|    22.4.0    |   20.12.1    |    0.12.8    |    0.11.6    |
+|    22.3.0    |   20.12.0    |    0.12.7    |    0.11.5    |
+|    22.2.0    |   20.11.1    |    0.12.6    |    0.11.4    |
+|    22.1.0    |   20.11.0    |    0.12.5    |    0.11.3    |
+|    22.0.0    |   20.10.0    |    0.12.4    |    0.11.2    |
+|    21.7.3    |    20.9.0    |    0.12.3    |    0.11.1    |
+|    21.7.2    |   18.20.4    |    0.12.2    |    0.11.0    |
+|    21.7.1    |   18.20.3    |    0.12.1    |    0.9.12    |
+|    21.7.0    |   18.20.2    |    0.12.0    |    0.9.11    |
+|    21.6.2    |   18.20.1    |   0.10.48    |    0.9.10    |
+
+This is a partial list. For a complete list, visit https://nodejs.org/en/download/releases
+```
+:::
+
+其中 LTS 代表 Long-term Support，表示这些版本是可以长期稳定运行的。显然你应该从这一列选。我暂时见过的用到 Node.js 的应用对版本的要求要么是 `>=18.0.0`，要么就是`<=18.0.0, >=20.0.0`，所以选择 20 以上的比较靠谱。
+
+假如你选择了 `22.11.0`
+
+```bash
+nvm install 22.11.0
+```
+\
+在不同版本之间切换
+```bash
+nvm use 20.12.2
+```
+换回来
+```bash
+nvm use 22.11.0
+```
+\
+
+:::{.callout-important title="如果 nvm use 出现乱码或有其他故障"}
+请检查「以管理员身份运行」这一步，它非常重要
+:::
+
+NVM 已经帮你配好了环境变量，所以不需要再手动操作其他内容，这样装好了就行
+
+#### 安装 JupyterLab Desktop
+
+在 [GitHub Releases](https://github.com/jupyterlab/jupyterlab-desktop/releases){target="_blank"} 下载最新版的 exe 格式文件点开安装
+
+#### 设置 JupyterLab Desktop
+
+窗口标题栏会显示当前使用的 conda 环境，点击可以切换；\
+标题栏 Menu 的 Settings 当中也可以换环境。
+
+##### 切换成中文显示 {#sec-labchinese}
+
+网页内容可以切换成中文，但 JupyterLab Desktop 这个 App 本身的不可以。
+
+退出 App；
+
+打开 Miniforge Prompt，激活刚才你使用的环境
+
+```bash
+pip install jupyterlab-language-pack-zh-CN
+```
+
+再打开 App，在网页的 Settings－Language 选中 `Chinese (Simplified, China) - 中文 (简体, 中国)`
+
+## VS Code 方案 {#sec-vscode}
 
 ## 附录 {#sec-appendix}
 
+[nbstata 用户指南](https://hugetim.github.io/nbstata/user_guide){target="_blank"}
+
+[JupyerLab Desktop 用户指南](https://github.com/jupyterlab/jupyterlab-desktop/blob/master/user-guide.md){target="_blank"}
+
+[Install nvm-windows, node.js, and npm](https://learn.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-windows#install-nvm-windows-nodejs-and-npm){target="_blank"}
