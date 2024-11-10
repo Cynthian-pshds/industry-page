@@ -495,15 +495,15 @@ Miniconda 也是 Anaconda 的产品，虽然现在不对任何人收费，但以
 </tbody>
 </table>
 <p>以我自己的为例，最终效果大概会像这样</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode txt code-with-copy"><code class="sourceCode default"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>[nbstata]</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>stata_dir = D:/Program Files/Stata18</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>edition = mp</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>splash = False</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>graph_format = png</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>graph_width = 5.5in</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>graph_height = 4in</span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>echo = False</span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>missing = .</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>[nbstata]
+stata_dir = D:/Program Files/Stata18
+edition = mp
+splash = False
+graph_format = png
+graph_width = 5.5in
+graph_height = 4in
+echo = False
+missing = .</code></pre>
 <p>——莫忘了 Ctrl + S 保存。</p>
 </section>
 </section>
@@ -687,8 +687,19 @@ This is a partial list. For a complete list, visit https://nodejs.org/en/downloa
 <p>在单元格内输入</p>
 <div class="sourceCode" id="cb20"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">sysuse</span> auto</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>su</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>得到如下输出<br>
-:::{.callout-caution title=“点击展开” collapse=“true”}</p>
+<p>得到如下输出</p>
+<div class="callout callout-style-default callout-caution callout-titled" title="点击展开">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+点击展开
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <pre><code>. sysuse auto
 (1978 automobile data)
 
@@ -712,7 +723,10 @@ displacement |         74    197.2973    91.83722         79        425
      foreign |         74    .2972973    .4601885          0          1
 
 . </code></pre>
-<p>::: 可以用啦。</p>
+</div>
+</div>
+</div>
+<p>可以用啦。</p>
 </section>
 </section>
 </section>

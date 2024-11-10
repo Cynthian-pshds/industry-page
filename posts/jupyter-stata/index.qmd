@@ -173,7 +173,7 @@ pip install nbstata --upgrade
 
 以我自己的为例，最终效果大概会像这样
 
-``` txt
+```
 [nbstata]
 stata_dir = D:/Program Files/Stata18
 edition = mp
@@ -347,7 +347,8 @@ pip install jupyterlab-language-pack-zh-CN
 sysuse auto
 su
 ```
-得到如下输出\
+得到如下输出
+
 :::{.callout-caution title="点击展开" collapse="true"}
 ```
 . sysuse auto
@@ -375,6 +376,7 @@ displacement |         74    197.2973    91.83722         79        425
 . 
 ```
 :::
+
 可以用啦。
 
 ## 附录 {#sec-appendix}
