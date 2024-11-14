@@ -201,7 +201,7 @@ missing = .
 #### 配 Node.js 环境 {#sec-nodejs}
 
 JupyterLab Desktop 因为基于 Electron 开发，需要靠 Node JS 实现某些后台功能。\
-直接安装难以切换版本（文科社科普遍就业困难，谁知道你以后会不会改行改到被迫用某个低版本 Node.js 在甲方提供的祖传代码上开发），所以建议如下用 NVM 作管理器安装 Node JS。
+直接安装难以切换版本，所以建议如下用 NVM 作管理器安装 Node JS。
 
 ##### 安装 NVM
 
