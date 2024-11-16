@@ -19,5 +19,8 @@
   },
   "posts/jupyter-stata/index.qmd": {
     "index.html": "b2ae8ba1"
+  },
+  "posts/memory-compression/index.qmd": {
+    "index.html": "942ee0c6"
   }
 }

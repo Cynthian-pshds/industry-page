@@ -1,12 +1,5 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "生产制造 | Production Industry",
-    "section": "",
-    "text": "本网站只有帖子，没有文档。  \n\n\n\n\n\n\n\n\n   \n     \n     \n       排序方式\n       默认\n         \n          标题\n        \n         \n          日期 - 日期升序\n        \n         \n          日期 - 日期降序\n        \n         \n          作者\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\n我的建站方案｜My Site Setup\n\n\nAlgolia + Astro + Cloudflare + Docusaurus + GitHub + Namesilo + Quarto\n\n\n\n操作经验\n\n\n\n不需要学过任何语言的代码\n\n\n\n\n\n2024 年 7 月 28 日\n\n\n刘景山\n\n\n\n\n\n\n\n\n\n\n\n\nJupyter + Stata 配置方法\n\n\nVS Code 或 JupyterLab Desktop\n\n\n\n操作经验\n\n\nJupyter\n\n\nStata\n\n\n\n对文科生友好\n\n\n\n\n\n2024 年 4 月 28 日\n\n\n刘景山\n\n\n\n\n\n\n无匹配项"
-  },
-  {
     "objectID": "posts/jupyter-stata/index.html",
     "href": "posts/jupyter-stata/index.html",
     "title": "Jupyter + Stata 配置方法",
@@ -47,5 +40,47 @@
     "title": "Jupyter + Stata 配置方法",
     "section": "5 附录",
     "text": "5 附录\nnbstata 用户指南\nJupyerLab Desktop 用户指南\nInstall nvm-windows, node.js, and npm"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "生产制造 | Production Industry",
+    "section": "",
+    "text": "本网站只有帖子，没有文档。  \n\n\n\n\n\n\n\n\n   \n     \n     \n       排序方式\n       默认\n         \n          标题\n        \n         \n          日期 - 日期升序\n        \n         \n          日期 - 日期降序\n        \n         \n          作者\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\n开启关闭内存压缩功能\n\n\nWindows 10 及以上系统\n\n\n\n操作经验\n\n\n内存\n\n\n\n阅读陌生网友帖子的笔记\n\n\n\n\n\n2024 年 11 月 16 日\n\n\n刘景山\n\n\n\n\n\n\n\n\n\n\n\n\n我的建站方案｜My Site Setup\n\n\nAlgolia + Astro + Cloudflare + Docusaurus + GitHub + Namesilo + Quarto\n\n\n\n操作经验\n\n\n\n不需要学过任何语言的代码\n\n\n\n\n\n2024 年 7 月 28 日\n\n\n刘景山\n\n\n\n\n\n\n\n\n\n\n\n\nJupyter + Stata 配置方法\n\n\nVS Code 或 JupyterLab Desktop\n\n\n\n操作经验\n\n\nJupyter\n\n\nStata\n\n\n\n对文科生友好\n\n\n\n\n\n2024 年 4 月 28 日\n\n\n刘景山\n\n\n\n\n\n\n无匹配项"
+  },
+  {
+    "objectID": "posts/memory-compression/index.html",
+    "href": "posts/memory-compression/index.html",
+    "title": "开启关闭内存压缩功能",
+    "section": "",
+    "text": "在用 Tensorflow 携带的 Keras 跑神经网络时，解释变量一百个，样本只有两万条，但我注意到，即使将 batch_size 写成 X_train.shape[1]（拉满），也被限制在两位数，连一百条都没有。于是我很好奇是什么软件占了那么多内存不让 Python 用。\n打开 Windows 资源监视器，在内存页面看到了名为「Memory Compression」的神秘进程。"
+  },
+  {
+    "objectID": "posts/memory-compression/index.html#起因",
+    "href": "posts/memory-compression/index.html#起因",
+    "title": "开启关闭内存压缩功能",
+    "section": "",
+    "text": "在用 Tensorflow 携带的 Keras 跑神经网络时，解释变量一百个，样本只有两万条，但我注意到，即使将 batch_size 写成 X_train.shape[1]（拉满），也被限制在两位数，连一百条都没有。于是我很好奇是什么软件占了那么多内存不让 Python 用。\n打开 Windows 资源监视器，在内存页面看到了名为「Memory Compression」的神秘进程。"
+  },
+  {
+    "objectID": "posts/memory-compression/index.html#解释",
+    "href": "posts/memory-compression/index.html#解释",
+    "title": "开启关闭内存压缩功能",
+    "section": "2 解释",
+    "text": "2 解释\n\n2.1 分页\n这个我相信你们都略微知道一点，只要是在买电脑的时候好奇过什么是「SSD」就大概已经明白。传统的硬盘仅执行外存工作，不参与内存。固态硬盘（SSD）可以让一部分内存使用硬盘空间，它在（物理意义上的）C 盘里的文件名是 pagefile.sys ，缓解物理内存压力。这就是分页文件。代价则是在内存条和硬盘之间传输信息比较慢，如果这些信息当中有一些需要频繁更新，就会弄巧成拙，比传统方式更卡。\n\n\n2.2 内存压缩\n为了减小分页的负担，微软在 Windows 10 引入了内存压缩功能。硬盘里的东西可以压缩成 zip 7z rar 等格式，内存条里的也可以压缩。将不常用的数据压缩变小，可以多一些空间给内存条自己用，不必麻烦硬盘。\n\n\n2.3 然而\n这个压缩空间是有一定预留的，宁愿空着也不让其他进程使用。我现在很想关掉它。"
+  },
+  {
+    "objectID": "posts/memory-compression/index.html#操作",
+    "href": "posts/memory-compression/index.html#操作",
+    "title": "开启关闭内存压缩功能",
+    "section": "3 操作",
+    "text": "3 操作\n\n3.1 查询\n\n按 Win + R\n输入 powershell\n按 Ctrl + Shift + Enter\n弹出新窗口\n输入 Get-MMAgent（大小写无关紧要）\n按 Enter\n\n返回文字如下所示\n(base) PS C:\\Windows\\system32&gt; Get-MMAgent\n\n\nApplicationLaunchPrefetching : True\nApplicationPreLaunch         : True\nMaxOperationAPIFiles         : 256\nMemoryCompression            : True\nOperationAPI                 : True\nPageCombining                : True\nPSComputerName               :\nMemoryCompression 这一项反映了启用与否的状态。\n\n\n3.2 关闭\n\n按 Win + R\n输入 tasksched.msc （代表 Task Scheduler Microsoft Console）\n按 Ctrl + Shift + Enter\n弹出新窗口\n在左侧目录中找到 任务计划程序库，下拉列表\n找到 Microsoft，下拉列表\n找到 Windows，下拉列表\n找到 MemoryDiagnostic，单击\n在窗口中间区域找到 ProcessMemoryDiagnosticEvents 和 RunFullMemoryDiagnostic，分别右键单击，点禁用。\n\n\n\n3.3 开启\n将以上步骤最后一步的禁用改成启用。"
+  },
+  {
+    "objectID": "posts/memory-compression/index.html#附录",
+    "href": "posts/memory-compression/index.html#附录",
+    "title": "开启关闭内存压缩功能",
+    "section": "4 附录",
+    "text": "4 附录\n\n\n\n\n\n\n博客园的帖子\n\n\n\n凉了记忆：Win 10 开启关闭内存压缩\n\n\n\n\n\n\n\n\nWindows 售后咨询\n\n\n\nMemory Compression这到底是个什么东西？"
   }
 ]

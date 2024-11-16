@@ -1,0 +1,86 @@
+---
+title: 开启关闭内存压缩功能
+subtitle: Windows 10 及以上系统
+description: 阅读陌生网友帖子的笔记
+abstract: 资料来源见附录
+author: 刘景山
+date: 2024-11-16
+categories: [操作经验,内存]
+number-sections: true
+toc-title: 阅读进度
+toc-depth: 3
+---
+
+## 起因
+
+在用 Tensorflow 携带的 Keras 跑神经网络时，解释变量一百个，样本只有两万条，但我注意到，即使将 `batch_size` 写成 `X_train.shape[1]`（拉满），也被限制在两位数，连一百条都没有。于是我很好奇是什么软件占了那么多内存不让 Python 用。
+
+打开 Windows 资源监视器，在内存页面看到了名为「Memory Compression」的神秘进程。
+
+## 解释
+
+### 分页
+
+这个我相信你们都略微知道一点，只要是在买电脑的时候好奇过什么是「SSD」就大概已经明白。传统的硬盘仅执行外存工作，不参与内存。固态硬盘（SSD）可以让一部分内存使用硬盘空间，它在（物理意义上的）C&thinsp;盘里的文件名是 `pagefile.sys` ，缓解物理内存压力。这就是**分页**文件。代价则是在内存条和硬盘之间传输信息比较慢，如果这些信息当中有一些需要频繁更新，就会弄巧成拙，比传统方式更卡。
+
+### 内存压缩
+
+为了减小分页的负担，微软在 Windows 10 引入了内存压缩功能。硬盘里的东西可以压缩成&emsp;`zip`&emsp;`7z`&emsp;`rar`&emsp;等格式，内存条里的也可以压缩。将不常用的数据压缩变小，可以多一些空间给内存条自己用，不必麻烦硬盘。
+
+### 然而
+
+这个压缩空间是有一定预留的，宁愿空着也不让其他进程使用。我现在很想关掉它。
+
+## 操作
+
+### 查询
+
+- 按 Win + R
+- 输入 `powershell`
+- 按 Ctrl + Shift + Enter
+- 弹出新窗口
+- 输入 `Get-MMAgent`（大小写无关紧要）
+- 按 Enter
+
+返回文字如下所示
+
+```txt
+(base) PS C:\Windows\system32> Get-MMAgent
+
+
+ApplicationLaunchPrefetching : True
+ApplicationPreLaunch         : True
+MaxOperationAPIFiles         : 256
+MemoryCompression            : True
+OperationAPI                 : True
+PageCombining                : True
+PSComputerName               :
+```
+
+`MemoryCompression` 这一项反映了启用与否的状态。
+
+### 关闭
+
+- 按 Win + R
+- 输入 `tasksched.msc` （代表 Task Scheduler Microsoft Console）
+- 按 Ctrl + Shift + Enter
+- 弹出新窗口
+- 在左侧目录中找到 `任务计划程序库`，下拉列表
+- 找到 `Microsoft`，下拉列表
+- 找到 `Windows`，下拉列表
+- 找到 `MemoryDiagnostic`，单击
+- 在窗口中间区域找到 `ProcessMemoryDiagnosticEvents` 和 `RunFullMemoryDiagnostic`，分别右键单击，点禁用。
+
+### 开启
+
+将以上步骤最后一步的禁用改成启用。
+
+## 附录
+
+::: {.callout-note title="博客园的帖子"}
+**[凉了记忆：Win&thinsp;10&thinsp;开启关闭内存压缩](https://www.cnblogs.com/ketoli/p/16934819)**
+:::
+
+::: {.callout-note title="Windows 售后咨询"}
+**[Memory Compression这到底是个什么东西？](https://answers.microsoft.com/zh-hans/windows/forum/all/memory/9bd12798-7c58-48dd-b67d-daaabb56ed95)**
+:::
