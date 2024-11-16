@@ -53,14 +53,14 @@
     "href": "posts/memory-compression/index.html",
     "title": "开启关闭内存压缩功能",
     "section": "",
-    "text": "在用 Tensorflow 携带的 Keras 跑神经网络时，解释变量一百个，样本只有两万条，但我注意到，即使将 batch_size 写成 X_train.shape[1]（拉满），也被限制在两位数，连一百条都没有。于是我很好奇是什么软件占了那么多内存不让 Python 用。\n打开 Windows 资源监视器，在内存页面看到了名为「Memory Compression」的神秘进程。"
+    "text": "在用 Tensorflow 携带的 Keras 跑神经网络时，我很好奇是什么软件占了那么多内存不让 Python 用。\n打开 Windows 资源监视器，在内存页面看到了名为「Memory Compression」的神秘进程。"
   },
   {
     "objectID": "posts/memory-compression/index.html#起因",
     "href": "posts/memory-compression/index.html#起因",
     "title": "开启关闭内存压缩功能",
     "section": "",
-    "text": "在用 Tensorflow 携带的 Keras 跑神经网络时，解释变量一百个，样本只有两万条，但我注意到，即使将 batch_size 写成 X_train.shape[1]（拉满），也被限制在两位数，连一百条都没有。于是我很好奇是什么软件占了那么多内存不让 Python 用。\n打开 Windows 资源监视器，在内存页面看到了名为「Memory Compression」的神秘进程。"
+    "text": "在用 Tensorflow 携带的 Keras 跑神经网络时，我很好奇是什么软件占了那么多内存不让 Python 用。\n打开 Windows 资源监视器，在内存页面看到了名为「Memory Compression」的神秘进程。"
   },
   {
     "objectID": "posts/memory-compression/index.html#解释",
