@@ -1,0 +1,15 @@
+---
+title: 说明书
+description: 解答疑问之如何使用此网站
+format:
+  html:
+    toc: true
+    html-math-method: katex
+    css: styles.css
+    toc-location: left
+    toc-title: 目录
+---
+<br>
+本网站只有帖子，没有文档。
+<br></br>
+点击左上角网站名字可以回到入口主页，点斜顶平房按钮跳转域名主页。

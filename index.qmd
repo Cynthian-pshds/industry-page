@@ -9,9 +9,3 @@ listing:
 page-layout: full
 title-block-banner: true
 ---
-<br>
-本网站只有帖子，没有文档。
-<br>
-<br>
----
-<br>

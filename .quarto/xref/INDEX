@@ -22,5 +22,11 @@
   },
   "posts/memory-compression/index.qmd": {
     "index.html": "942ee0c6"
+  },
+  "pages/help.qmd": {
+    "help.html": "dfa2ef43"
+  },
+  "help.qmd": {
+    "help.html": "7eff3649"
   }
 }

@@ -5,7 +5,8 @@ website:
   title: 生产制造 | Production Industry
   favicon: /image/logo.svg
   navbar:
-    tools:
+    left:
+      - help.qmd
       - href: https://www.pengxianzhe.org
         icon: house-door
     search: true
