@@ -42,6 +42,13 @@
     "text": "5 附录\nnbstata 用户指南\nJupyerLab Desktop 用户指南\nInstall nvm-windows, node.js, and npm"
   },
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "生产制造 | Production Industry",
+    "section": "",
+    "text": "排序方式\n       默认\n         \n          标题\n        \n         \n          日期 - 日期升序\n        \n         \n          日期 - 日期降序\n        \n         \n          作者\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\n怎样在 Astro 中实现用 YAML 代替 JSON 编写\n\n\n按问题难度分为两版\n\n\n\n操作经验\n\n\nAstro\n\n\n前端\n\n\n\n我还没弄懂困难版\n\n\n\n\n\n2024 年 12 月 03 日\n\n\n刘景山\n\n\n\n\n\n\n\n\n\n\n\n\n开启关闭内存压缩功能\n\n\nWindows 10 及以上系统\n\n\n\n操作经验\n\n\n内存\n\n\n\n阅读陌生网友帖子的笔记\n\n\n\n\n\n2024 年 11 月 16 日\n\n\n刘景山\n\n\n\n\n\n\n\n\n\n\n\n\n我的建站方案｜My Site Setup\n\n\nAlgolia + Astro + Cloudflare + Docusaurus + GitHub + Namesilo + Quarto\n\n\n\n操作经验\n\n\n\n不需要学过任何语言的代码\n\n\n\n\n\n2024 年 7 月 28 日\n\n\n刘景山\n\n\n\n\n\n\n\n\n\n\n\n\nJupyter + Stata 配置方法\n\n\nVS Code 或 JupyterLab Desktop\n\n\n\n操作经验\n\n\nJupyter\n\n\nStata\n\n\n\n对文科生友好\n\n\n\n\n\n2024 年 4 月 28 日\n\n\n刘景山\n\n\n\n\n\n\n无匹配项"
+  },
+  {
     "objectID": "help.html",
     "href": "help.html",
     "title": "说明书",
@@ -49,11 +56,11 @@
     "text": "本网站只有帖子，没有文档。  点击左上角网站名字可以回到入口主页，点斜顶平房按钮跳转域名主页。"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "生产制造 | Production Industry",
+    "objectID": "posts/astro-yaml/index.html",
+    "href": "posts/astro-yaml/index.html",
+    "title": "怎样在 Astro 中实现用 YAML 代替 JSON 编写",
     "section": "",
-    "text": "排序方式\n       默认\n         \n          标题\n        \n         \n          日期 - 日期升序\n        \n         \n          日期 - 日期降序\n        \n         \n          作者\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\n开启关闭内存压缩功能\n\n\nWindows 10 及以上系统\n\n\n\n操作经验\n\n\n内存\n\n\n\n阅读陌生网友帖子的笔记\n\n\n\n\n\n2024 年 11 月 16 日\n\n\n刘景山\n\n\n\n\n\n\n\n\n\n\n\n\n我的建站方案｜My Site Setup\n\n\nAlgolia + Astro + Cloudflare + Docusaurus + GitHub + Namesilo + Quarto\n\n\n\n操作经验\n\n\n\n不需要学过任何语言的代码\n\n\n\n\n\n2024 年 7 月 28 日\n\n\n刘景山\n\n\n\n\n\n\n\n\n\n\n\n\nJupyter + Stata 配置方法\n\n\nVS Code 或 JupyterLab Desktop\n\n\n\n操作经验\n\n\nJupyter\n\n\nStata\n\n\n\n对文科生友好\n\n\n\n\n\n2024 年 4 月 28 日\n\n\n刘景山\n\n\n\n\n\n\n无匹配项"
+    "text": "1 直接import的情形\n\n\n2 原本调用json时存在复杂逻辑语句的情形"
   },
   {
     "objectID": "posts/memory-compression/index.html",

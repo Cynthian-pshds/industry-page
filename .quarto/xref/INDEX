@@ -28,5 +28,8 @@
   },
   "help.qmd": {
     "help.html": "7eff3649"
+  },
+  "posts/astro-yaml/index.qmd": {
+    "index.html": "f092a005"
   }
 }

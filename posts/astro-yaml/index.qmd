@@ -1,0 +1,16 @@
+---
+title: 怎样在 Astro 中实现用 YAML 代替 JSON 编写
+subtitle: 按问题难度分为两版
+description: 我还没弄懂困难版
+abstract: 如果有读者知道困难版怎么解决，欢迎联系我
+author: 刘景山
+date: 2024-12-3
+categories: [操作经验,Astro,前端]
+number-sections: true
+toc-title: 阅读进度
+toc-depth: 3
+---
+
+# 直接import的情形
+
+# 原本调用json时存在复杂逻辑语句的情形

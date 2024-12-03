@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/astro-yaml/index.html",
       "/posts/memory-compression/index.html",
       "/posts/site-setup/index.html",
       "/posts/jupyter-stata/index.html"
