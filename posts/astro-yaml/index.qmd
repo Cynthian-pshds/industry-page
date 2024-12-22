@@ -7,7 +7,6 @@ author: 刘景山
 date: 2024-12-3
 categories: [操作经验,Astro,前端]
 number-sections: true
-toc-title: 阅读进度
 toc-depth: 3
 ---
 

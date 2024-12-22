@@ -7,7 +7,6 @@ author: 刘景山
 date: 2024-4-28
 categories: [操作经验, Jupyter,Stata]
 number-sections: true
-toc-title: 章节目录
 toc-depth: 5
 ---
 

@@ -104,8 +104,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -221,7 +235,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">章节目录</h2>
+    <h2 id="toc-title">该页面内容</h2>
    
   <ul>
   <li><a href="#前言" id="toc-前言" class="nav-link active" data-scroll-target="#前言"><span class="header-section-number">1</span> 前言</a></li>
@@ -383,7 +397,7 @@ Miniforge Prompt 本身并不需要设定环境变量。现在可以跳到 <a hr
 <li>打开 Windows 高级系统设置</li>
 <li>点击「高级」选项卡</li>
 <li>点开「环境变量」</li>
-<li>单击「系统变量」当中的「Path」<span class="math inline">\(\Rightarrow\)</span> 单击「编辑」进入「编辑环境变量」窗口</li>
+<li>单击「系统变量」当中的「Path」<span class="math inline">\Rightarrow</span> 单击「编辑」进入「编辑环境变量」窗口</li>
 <li>单击「新建」来创建路径，通常安装 miniforge 的文件夹默认在 C 盘，是 <code>C:\\miniforge3</code>，那么你要新建的三个路径就是</li>
 <li></li>
 </ol>
@@ -493,7 +507,7 @@ C:\miniforge3\Library\bin</code></pre>
 <tr class="even">
 <td style="text-align: center;"><code>graph_format</code></td>
 <td>Stata 输出图表时<br>存为什么格式</td>
-<td>四选一 <span class="math inline">\(\Downarrow\)</span><br><code>png</code> <code>pdf</code> <code>svg</code> <code>pystata</code> <br><code>pystata</code> 的意思是和 pystata 的设置保持一致</td>
+<td>四选一 <span class="math inline">\Downarrow</span><br><code>png</code> <code>pdf</code> <code>svg</code> <code>pystata</code> <br><code>pystata</code> 的意思是和 pystata 的设置保持一致</td>
 <td>虽然你现在可能不知道什么是 pystata<br>（我也不知道）<br>但以后可能用得上</td>
 </tr>
 <tr class="odd">
@@ -505,7 +519,7 @@ C:\miniforge3\Library\bin</code></pre>
 <tr class="even">
 <td style="text-align: center;"><code>echo</code></td>
 <td>想必你知道<br>用 Jupyter 跑 Python 没有回声<br>那 Jupyter 里的 Stata 怎么办</td>
-<td>三选一 <span class="math inline">\(\Downarrow\)</span><br><code>True</code> 一切命令都有回声<br><code>False</code> cell 仅一行命令时不回声；其他 cell 有回声<br><code>None</code> 完全没有回声</td>
+<td>三选一 <span class="math inline">\Downarrow</span><br><code>True</code> 一切命令都有回声<br><code>False</code> cell 仅一行命令时不回声；其他 cell 有回声<br><code>None</code> 完全没有回声</td>
 <td>想必你已经知道 Stata 有个对用户很友好的默认设定，就是会在输出窗口先显示你给的输入，再显示给你的输出<br>这个功能被叫作「回声」</td>
 </tr>
 <tr class="odd">
