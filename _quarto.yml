@@ -12,6 +12,7 @@ website:
     search: true
 format:
   html:
+    html-math-method: katex
     theme: flatly
     css: styles.css
     fontsize: 18px
