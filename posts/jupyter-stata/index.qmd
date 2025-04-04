@@ -185,11 +185,22 @@ missing = .
 
 ## JupyterLab 方案 {#sec-jupyterlab}
 
+:::{.callout-warning title="警告！"}
+请注意，以下论述是 2024 年 4 月写的。  
+到 2024 年 12 月中旬，由于 DeepSeek-V3 开源发布，  
+VS Code 的 LLM 辅助编程生态已经甩开 JupyterLab 很长距离，  
+JupyterLab 的优势仅剩下因为设置简单而容易复现。
+:::
+
 虽然在 VS Code 丰富的社区扩展生态和灵活的语法高亮前，原生 Jupyter 已经没有多少吸引力（而且 Jupyter 受财力限制，目前没有，未来也不太可能学微软砸钱给 GitHub Copilot 教育优惠的免费 LLM 辅助），但考虑到读者朋友多来自社科专业，大概率是 Jupyter 原住民，而且 VS Code 由于可自定义的设置太多，常常难以复现，所以还是介绍一下原生 Jupyter 的配置。
 
 虽然 JupyterLab Desktop 因为基于 Electron 开发而受到广大程序员朋友嘲笑，但我仍然推荐。它安装、卸载、浏览、检修扩展都是直接在应用内部点鼠标就可以的，不需要键盘敲命令行。它不在浏览器里显示，可以轻松区分 Ctrl + Tab 和 Alt + Tab 的作用，与浏览器实现分类正确的两种切换。
 
 如果你赞赏以上叙述，决定不嘲笑我，请从 @sec-labdesktop 继续。
+
+:::{.callout-important title="重申"}
+请注意 @sec-jupyterlab 开端的警告！如无要万无一失保证可复现的强烈需求，建议跳至 @sec-vscode 。
+:::
 
 ### JupyterLab Web
 
@@ -304,7 +315,7 @@ pip install jupyterlab-language-pack-zh-CN
 ```
 再打开 App，在网页的 Settings－Language 选中 `Chinese (Simplified, China) - 中文 (简体, 中国)`
 
-## VS Code 方案 {#sec-vscode}
+## VS Code 方案（推荐）{#sec-vscode}
 
 ### 装配 VS Code 本身
 

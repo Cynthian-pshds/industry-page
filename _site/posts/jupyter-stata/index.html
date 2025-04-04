@@ -275,7 +275,7 @@ window.Quarto = {
   </ul></li>
   </ul></li>
   </ul></li>
-  <li><a href="#sec-vscode" id="toc-sec-vscode" class="nav-link" data-scroll-target="#sec-vscode"><span class="header-section-number">4</span> VS Code 方案</a>
+  <li><a href="#sec-vscode" id="toc-sec-vscode" class="nav-link" data-scroll-target="#sec-vscode"><span class="header-section-number">4</span> VS Code 方案（推荐）</a>
   <ul>
   <li><a href="#装配-vs-code-本身" id="toc-装配-vs-code-本身" class="nav-link" data-scroll-target="#装配-vs-code-本身"><span class="header-section-number">4.1</span> 装配 VS Code 本身</a>
   <ul>
@@ -546,9 +546,38 @@ missing = .</code></pre>
 </section>
 <section id="sec-jupyterlab" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="sec-jupyterlab"><span class="header-section-number">3</span> JupyterLab 方案</h2>
+<div class="callout callout-style-default callout-warning callout-titled" title="警告！">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+警告！
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>请注意，以下论述是 2024 年 4 月写的。<br>
+到 2024 年 12 月中旬，由于 DeepSeek-V3 开源发布，<br>
+VS Code 的 LLM 辅助编程生态已经甩开 JupyterLab 很长距离，<br>
+JupyterLab 的优势仅剩下因为设置简单而容易复现。</p>
+</div>
+</div>
 <p>虽然在 VS Code 丰富的社区扩展生态和灵活的语法高亮前，原生 Jupyter 已经没有多少吸引力（而且 Jupyter 受财力限制，目前没有，未来也不太可能学微软砸钱给 GitHub Copilot 教育优惠的免费 LLM 辅助），但考虑到读者朋友多来自社科专业，大概率是 Jupyter 原住民，而且 VS Code 由于可自定义的设置太多，常常难以复现，所以还是介绍一下原生 Jupyter 的配置。</p>
 <p>虽然 JupyterLab Desktop 因为基于 Electron 开发而受到广大程序员朋友嘲笑，但我仍然推荐。它安装、卸载、浏览、检修扩展都是直接在应用内部点鼠标就可以的，不需要键盘敲命令行。它不在浏览器里显示，可以轻松区分 Ctrl + Tab 和 Alt + Tab 的作用，与浏览器实现分类正确的两种切换。</p>
 <p>如果你赞赏以上叙述，决定不嘲笑我，请从 <a href="#sec-labdesktop" class="quarto-xref">小节&nbsp;3.2</a> 继续。</p>
+<div class="callout callout-style-default callout-important callout-titled" title="重申">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+重申
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>请注意 <a href="#sec-jupyterlab" class="quarto-xref">小节&nbsp;3</a> 开端的警告！如无要万无一失保证可复现的强烈需求，建议跳至 <a href="#sec-vscode" class="quarto-xref">小节&nbsp;4</a> 。</p>
+</div>
+</div>
 <section id="jupyterlab-web" class="level3" data-number="3.1">
 <h3 data-number="3.1" class="anchored" data-anchor-id="jupyterlab-web"><span class="header-section-number">3.1</span> JupyterLab Web</h3>
 <p>你刚才已经在 <a href="#sec-openlab" class="quarto-xref">小节&nbsp;2.2.2</a> 打开了，启动页面会有「nbstata」的内核按钮，与 python 内核一起出现，并列显示。这就可以直接用——从最简洁的实现方法来说，本经验到这里已经<strong>可以结束了</strong>。如果还需要将英文界面切换成中文，可参考 <a href="#sec-labchinese" class="quarto-xref">小节&nbsp;3.2.3.1</a> 的方法。</p>
@@ -564,7 +593,7 @@ missing = .</code></pre>
 <p><a href="https://github.com/nvm-sh/nvm" target="_blank">nvm</a> 本身是个 Unix 应用，只能在 Linux 等类 Unix 操作系统（例如 Android iOS macOS）运行，Windows 享受不到。<br>
 好在 <a href="https://github.com/coreybutler" target="_blank">Corey Butler</a> 开发了 <a href="https://github.com/coreybutler/nvm-windows" target="_blank">NVM for Windows</a> 作为使用上的代替。</p>
 <div class="callout callout-style-default callout-note callout-titled" title="卸载干净">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -573,7 +602,7 @@ missing = .</code></pre>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse show">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>我假定你没有在自己电脑上安装过 Node.js 或 npm。<br>
 如果有，卸载后可以在 cmd 或 Powershell 用 <code>where node</code> 帮助删除残余文件夹，<br>
@@ -605,7 +634,7 @@ missing = .</code></pre>
 <div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nvm</span> list available</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>此时会返回与以下类似的输出。</p>
 <div class="callout callout-style-default callout-caution callout-titled" title="点击展开">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -614,7 +643,7 @@ missing = .</code></pre>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <pre><code>|   CURRENT    |     LTS      |  OLD STABLE  | OLD UNSTABLE |
 |--------------|--------------|--------------|--------------|
@@ -690,7 +719,7 @@ This is a partial list. For a complete list, visit https://nodejs.org/en/downloa
 </section>
 </section>
 <section id="sec-vscode" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="sec-vscode"><span class="header-section-number">4</span> VS Code 方案</h2>
+<h2 data-number="4" class="anchored" data-anchor-id="sec-vscode"><span class="header-section-number">4</span> VS Code 方案（推荐）</h2>
 <section id="装配-vs-code-本身" class="level3" data-number="4.1">
 <h3 data-number="4.1" class="anchored" data-anchor-id="装配-vs-code-本身"><span class="header-section-number">4.1</span> 装配 VS Code 本身</h3>
 <section id="下载安装-vs-code" class="level4" data-number="4.1.1">
@@ -725,7 +754,7 @@ This is a partial list. For a complete list, visit https://nodejs.org/en/downloa
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>su</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>得到如下输出。</p>
 <div class="callout callout-style-default callout-caution callout-titled" title="点击展开">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -734,7 +763,7 @@ This is a partial list. For a complete list, visit https://nodejs.org/en/downloa
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <pre><code>. sysuse auto
 (1978 automobile data)
