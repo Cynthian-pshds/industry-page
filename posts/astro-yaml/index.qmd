@@ -5,7 +5,7 @@ description: 我还没弄懂困难版
 abstract: 如果有读者知道困难版怎么解决，欢迎联系我
 author: 刘景山
 date: 2024-12-3
-categories: [操作经验,Astro,前端]
+categories: [暂时搁置,操作经验,Astro,前端]
 number-sections: true
 toc-depth: 3
 ---

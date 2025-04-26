@@ -4,6 +4,6 @@ subtitle: Algolia + Astro + Cloudflare + Docusaurus + GitHub + Namesilo + Quarto
 description: 不需要学过任何语言的代码
 author: 刘景山
 date: "2024-07-28"
-categories: 操作经验
+categories: [暂时搁置,操作经验]
 ---
 
